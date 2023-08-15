@@ -42,7 +42,7 @@ jobs:
         
     - name: Push Docker Image
       env:
-        NEW_VERSION: ${{ steps.version.outputs.version }
+        NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
         docker push ${{ secrets.DOCKER_USER }}/docker-graphql:$NEW_VERSION
         docker push ${{ secrets.DOCKER_USER }}/docker-graphql:latest
